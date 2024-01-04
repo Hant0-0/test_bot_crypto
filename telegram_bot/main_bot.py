@@ -2,13 +2,13 @@ import re
 import time
 import requests
 import telebot
-
+from dotenv import load_dotenv
+import os
 from telebot import types
 
-token = '6952899655:AAFvqhb9Raoh81Lmco_jTaRXoIheA8O3Pg0'
-
+load_dotenv()
+token = os.getenv('TOKEN')
 bot = telebot.TeleBot(token)
-
 
 @bot.message_handler(commands=['start'])
 def main(message):
